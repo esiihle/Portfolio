@@ -1,2 +1,7 @@
 [build]
   publish = "PersonalPortfolio"
+
+[[headers]]
+  for = "images/Sicelwesihle_Myeza_Resume_1.pdf"
+  [headers.values]
+    Content-Type = "application/pdf"
