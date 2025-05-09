@@ -1,18 +1,16 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: ' Poppins', sans-serif;    
+    font-family: ' Poppins', sans-serif;
     box-sizing: border-box;
-
 }
 html{
     scroll-behavior:smooth;
 }
 body{
     background: #080808;
-    color :white 
-
- }
+    color :white
+}
  #header
     {
         width: 100%;
@@ -20,7 +18,7 @@ body{
         background-image:url(images/backgrounds/background3.jpg);
         background-size: cover;
         background-position: center;
-        
+
     }
 .container
 {
@@ -31,6 +29,10 @@ nav{
     align-items:center;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+nav .fa-bars,
+nav .fa-x {
+    display: none;
 }
 .logo{
     width: 400px
@@ -68,7 +70,7 @@ nav ul li a :hover:after{
 .header-text h1{
     font-size: 60px;
     margin-top :20px
-    
+
 }
 .header-text h1 span{
     color: #ff004f;
@@ -89,16 +91,17 @@ nav ul li a :hover:after{
 .about-col-1 img{
     width: 100%;
     border-radius: 15%;
-    
+
 }
 .about-col-2{
     flex-basis: 60%;
-   
+
 }
 .sub-title{
     font-size: 60px;
     font-weight: 600;
     color: #fff;
+    margin-bottom: 30px; /* Added margin below the subtitle */
 }
 .tab-titles{
     display: flex;
@@ -127,13 +130,13 @@ nav ul li a :hover:after{
 .tab-contents ul li{
     list-style: none;
     margin: 10px 0;
-   
+
 
 }
 .tab-contents ul li span{
     color: #b547b5;
     font-size: 14px;
-   
+
 }
 .tab-contents.active-tab{
     display: block;
@@ -141,46 +144,43 @@ nav ul li a :hover:after{
 .tab-contents{
     display: none;
 }
-/*---------------------------------Services Section---------------------------------*/
-#services{
+/*---------------------------------Skills Section---------------------------------*/
+#skills{
     padding: 80px 0;
     color: #aba8a8;
 }
-.services-list{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
+.skills-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust minmax for responsiveness */
+    grid-gap: 20px; /* Adjust gap as needed */
     margin-top: 50px;
-
 }
-.services-list div{
+.skills-list div{
     background: #262626;
-    padding: 40px;
-    font-size: 13px;
+    padding: 20px;
+    font-size: 16px;
     font-weight: 300;
-    border-radius: 10px;
+    border-radius: 8px; /* Slightly smaller border-radius */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     transition: background 0.5s, transform 0.5s;
 }
-.services-list div i{
-    font-size: 50px;
-    margin-bottom: 30px;
+.skills-list div i{
+    font-size: 40px; /* Slightly smaller icon size */
+    margin-bottom: 10px;
+    color: #fff; /* Ensure icons are visible */
 }
-.services-list div h2{
-    font-size: 30px;
+.skills-list div h2{
+    font-size: 20px; /* Slightly smaller heading */
     font-weight: 500;
-    margin-bottom: 15px;
+    color: #fff;
+    text-align: center;
 }
-.services-list div a{
-   text-decoration: none;
-   color:#fff;
-   font-size: 12px;
-   margin-top: 20px;
-    display: inline-block;
-}
-.services-list div:hover{
+.skills-list div:hover{
     background: #ff004f;
-    transform: translateY(-10px);
-    border-right: 10px solid #ff004f;
+    transform: translateY(-5px); /* Subtle hover effect */
 }
 /*------------------- Portfolio Section---------------------------------*/
 #portfolio{
@@ -188,11 +188,10 @@ nav ul li a :hover:after{
     color: #aba8a8;
 }
 .work-list{
-    display:grid;
+    display: grid; /* Use grid to arrange all work items horizontally */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 40px;
     margin-top: 50px;
-
 }
 .work{
     border-radius: 10px;
@@ -204,12 +203,11 @@ nav ul li a :hover:after{
     border-radius: 10px;
     display:block;
     transition: transform 0.5s;
-    
 }
 .layer{
     width: 100%;
     height: 0;
-    background:linear-grdient(rgba(0,0,0,0.6)),#ff004f;
+    background:linear-gradient(rgba(0,0,0,0.6),#ff004f);
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -227,7 +225,6 @@ nav ul li a :hover:after{
 .layer h3{
     font-weight: 500;
     margin-bottom: 20px;
-
 }
 .layer a{
     margin-top: 20px;
@@ -261,6 +258,19 @@ nav ul li a :hover:after{
 .btn:hover{
     background: #ff004f;
 }
+
+/* Initially hide the additional work items */
+.work-list .additional-work {
+    display: none;
+}
+
+/* Optionally, you can style the initial work differently if needed */
+.work-list .initial-work {
+    /* Add any specific styling for the initial three blocks */
+}
+
+
+
 /*-------------------Contact Section---------------------------------*/
 .contact-left{
     flex-basis:35%;
@@ -320,18 +330,16 @@ form btn2{
     width:100;
     text-align: center;
     padding: 20px 0;
-    
+
     font-weight: 300;
     margin-top:20px;
 
 }
+
 /*-------------------CSS FOR SMALL SCREEN---------------------------------*/
-nav .fa{
-    display: none;
-}
 @media only screen and (max-width:600px){
     #header{
-      background-image: url(images/backgrounds/phone-background.jpg);  
+        background-image: url(images/backgrounds/phone-background.jpg);
     }
     .container {
         padding: 10px 5%;
@@ -368,10 +376,13 @@ nav .fa{
     .tab-contents ul li span {
         font-size: 12px;
     }
-    nav .fa{
+    /* Target the specific icons for display on mobile */
+    nav .fa-bars,
+    nav .fa-x {
         display: block;
         font-size: 25px;
         color: white;
+        cursor: pointer;
     }
     nav ul{
         background:#ff004f;
@@ -389,7 +400,7 @@ nav .fa{
         margin: 25px;
         text-align: center;
     }
-    nav ul .fa{
+    nav ul .fa{ /* This targets the close button *inside* the mobile menu */
         position:absolute;
         top:25px;
         left:25px;
@@ -403,10 +414,30 @@ nav .fa{
         flex-basis: 100%;
         margin-bottom: 30px;
     }
+    .skills-list {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust for smaller screens */
+        grid-gap: 10px;
+    }
+    .skills-list div {
+        padding: 15px;
+        font-size: 14px;
+    }
+    .skills-list div i {
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
+    .skills-list div h2 {
+        font-size: 16px;
+    }
+    .work-list {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); /* Stack on smaller screens */
+        grid-gap: 20px;
+    }
 }
 #msg{
     color:#61b752;
     margin-top: -40px;
     display:block;
-
 }
+
+
